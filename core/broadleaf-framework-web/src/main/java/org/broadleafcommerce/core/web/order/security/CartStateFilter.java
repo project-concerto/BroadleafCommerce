@@ -154,6 +154,10 @@ public class CartStateFilter extends AbstractIgnorableOncePerRequestFilter {
 
         HttpServletRequest request = (HttpServletRequest) req;
 
+        if (request.getRequestURI().equals("/cart/remove")) {
+            return true;
+        }
+
         if (!request.getMethod().equalsIgnoreCase("post")) {
             return false;
         }
