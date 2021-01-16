@@ -48,9 +48,6 @@ public class IdGenerationImpl implements IdGeneration {
     @Column(name = "BATCH_SIZE", nullable=false)
     protected Long batchSize;
 
-    @Version
-    protected Integer version;
-
     public String getType() {
         return type;
     }
@@ -104,7 +101,6 @@ public class IdGenerationImpl implements IdGeneration {
         result = prime * result + ((begin == null) ? 0 : begin.hashCode());
         result = prime * result + ((end == null) ? 0 : end.hashCode());
         result = prime * result + ((type == null) ? 0 : type.hashCode());
-        result = prime * result + ((version == null) ? 0 : version.hashCode());
         return result;
     }
 
@@ -141,11 +137,6 @@ public class IdGenerationImpl implements IdGeneration {
             if (other.type != null)
                 return false;
         } else if (!type.equals(other.type))
-            return false;
-        if (version == null) {
-            if (other.version != null)
-                return false;
-        } else if (!version.equals(other.version))
             return false;
         return true;
     }

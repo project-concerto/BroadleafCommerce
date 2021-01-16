@@ -41,6 +41,4 @@ public interface IdGeneration extends Serializable {
 
     public void setBatchSize(Long batchSize);
 
-    public Integer getVersion();
-
 }
